@@ -41,6 +41,4 @@ const getConfig = TARGET => {
 	}
 };
 
-console.log(getConfig(TARGET));
-
 module.exports = getConfig(TARGET);
