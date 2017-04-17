@@ -38,7 +38,8 @@ module.exports.html = {
 
 module.exports.devServer = {
 	devServer: {
-		hot: true
+		hot: true,
+		inline: true
 	},
 	plugins: [new webpack.HotModuleReplacementPlugin()]
 };
