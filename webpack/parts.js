@@ -6,13 +6,25 @@ module.exports.typescript = {
 		rules: [
 			{
 				test: /\.tsx?$/,
-				loader: 'ts-loader',
+				loader: 'awesome-typescript-loader',
 				exclude: /node_modules/
 			}
 		]
 	},
 	resolve: {
 		extensions: ['.ts', '.tsx']
+	}
+};
+
+module.exports.tslint = {
+	module: {
+		rules: [
+			{
+				test: /\.tsx?$/,
+				enforce: 'pre',
+				loader: 'tslint-loader'
+			}
+		]
 	}
 };
 
@@ -24,7 +36,12 @@ module.exports.html = {
 	]
 };
 
-module.exports.devServer = {};
+module.exports.devServer = {
+	devServer: {
+		hot: true
+	},
+	plugins: [new webpack.HotModuleReplacementPlugin()]
+};
 
 module.exports.setEnvVar = (name, value) => {
 	return {

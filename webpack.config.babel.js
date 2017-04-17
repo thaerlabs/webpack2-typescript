@@ -18,6 +18,7 @@ const commonConfig = merge(
 		}
 	},
 	parts.typescript,
+	parts.tslint,
 	parts.html
 );
 

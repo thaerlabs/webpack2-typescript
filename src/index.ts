@@ -1,17 +1,16 @@
-console.log('env is', process.env.NODE_ENV);
-
 class Person {
-	name: string
+  private name: string
 
-	constructor(name: string) {
-		this.name = name;
-	}
+  constructor(name: string) {
+    this.name = name;
+  }
 
-	sayHi() {
-		console.log('My name is', this.name);
-	}
+  public sayHi() {
+    return `My name is ${this.name}`
+  }
 }
 
-const joe = new Person('joe');
+const joe = new Person('MOE')
 
-joe.sayHi();
+document.getElementById('app')
+  .innerHTML = joe.sayHi();
