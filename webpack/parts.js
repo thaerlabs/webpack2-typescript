@@ -1,3 +1,4 @@
+const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
@@ -38,8 +39,16 @@ module.exports.html = {
 
 module.exports.devServer = {
 	devServer: {
+		contentBase: path.join(__dirname, 'public'),
+		watchOptions: {
+			poll: true
+		},
 		hot: true,
-		inline: true
+		compress: true,
+		overlay: {
+			errors: true,
+			warnings: true
+		}
 	},
 	plugins: [new webpack.HotModuleReplacementPlugin()]
 };
